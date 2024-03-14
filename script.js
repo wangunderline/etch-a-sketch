@@ -2,15 +2,13 @@ const container = document.querySelector("#main-container");
 const gridContainer = document.querySelector("#grid-container");
 const button = document.querySelector("button");
 
-let userPrompt = 256;
-
-function createGrid (squareNum) {
-  for (let i = 0; i < squareNum; i++) {
+function createGrid (gridSize) {
+  for (let i = 0; i < gridSize; i++) {
     const grid = document.createElement("div");
     grid.classList.add('grid')
     gridContainer.appendChild(grid);
 
-    for (let i = 0; i < squareNum; i++) {
+    for (let j = 0; j < gridSize; j++) {
       const square = document.createElement('div')
       square.classList.add('square')
       grid.appendChild(square)
