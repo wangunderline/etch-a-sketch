@@ -2,6 +2,7 @@
   border: 1px solid black;
   height: 100%;
   flex: auto;
+  background-color: white;
 }
 
 .grid {
@@ -27,4 +28,13 @@ body {
   display: flex;
   justify-content: center;
   margin: 10px;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  height: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: large;
 }

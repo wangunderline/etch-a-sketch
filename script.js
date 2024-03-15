@@ -1,8 +1,7 @@
 const container = document.querySelector("#main-container");
 const gridContainer = document.querySelector("#grid-container");
 const button = document.querySelector("button");
-const clearButton = document.querySelector("#clear-button")
-
+const clearButton = document.querySelector("#clear-button");
 
 function hoverOnGrid() {
   let allSquares = document.querySelectorAll(".square");
@@ -10,11 +9,11 @@ function hoverOnGrid() {
     let rgb1 = Math.floor(Math.random() * 255) + 0;
     let rgb2 = Math.floor(Math.random() * 255) + 0;
     let rgb3 = Math.floor(Math.random() * 255) + 0;
-    let brightness = 100
+    let brightness = 100;
 
     square.addEventListener("mouseenter", () => {
-      brightness -= 10
-      square.style.filter = `brightness(${brightness}%)`
+      brightness -= 10;
+      square.style.filter = `brightness(${brightness}%)`;
       square.style.backgroundColor = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
       console.log(square.style.backgroundColor);
     });
@@ -42,14 +41,28 @@ button.addEventListener("click", () => {
   while (gridContainer.hasChildNodes()) {
     gridContainer.removeChild(gridContainer.firstChild);
   }
-  const userPrompt = prompt("Grid size");
+
+  let userPrompt = prompt("Choose a number between 0 and 100");
+
+  while (userPrompt > 100 || userPrompt < 0) {
+    userPrompt = (prompt("No! Below 100 and above 0"));
+  }
+
+  while (!userPrompt) {
+    userPrompt = prompt("Come on, man, just type any number")
+  }
+
+  while (isNaN(userPrompt)) {
+    userPrompt = prompt("A letter, really? Did you lost your numbers?")
+  }
+
   createGrid(userPrompt);
 });
 
 clearButton.addEventListener("click", () => {
-  let allSquares = document.querySelectorAll('.square')
+  let allSquares = document.querySelectorAll(".square");
   allSquares.forEach((square) => {
-    square.style.backgroundColor = 'white'
-    square.style.filter = 'brightness(100%)'
-  })
-})
+    square.style.backgroundColor = "white";
+    square.style.filter = "brightness(100%)";
+  });
+});
