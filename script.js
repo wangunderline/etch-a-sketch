@@ -17,6 +17,11 @@ function hoverOnGrid() {
       square.style.backgroundColor = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
       console.log(square.style.backgroundColor);
     });
+
+    square.addEventListener('click', () => {
+      square.style.backgroundColor = "white";
+      square.style.filter = "brightness(100%)";
+    })
   });
 }
 
@@ -45,15 +50,15 @@ button.addEventListener("click", () => {
   let userPrompt = prompt("Choose a number between 0 and 100");
 
   while (userPrompt > 100 || userPrompt < 0) {
-    userPrompt = (prompt("No! Below 100 and above 0"));
+    userPrompt = prompt("No! Below 100 and above 0");
   }
 
   while (!userPrompt) {
-    userPrompt = prompt("Come on, man, just type any number")
+    userPrompt = prompt("Come on, man, just type any number");
   }
 
   while (isNaN(userPrompt)) {
-    userPrompt = prompt("A letter, really? Did you lost your numbers?")
+    userPrompt = prompt("A letter, really? Did you lost your numbers?");
   }
 
   createGrid(userPrompt);
