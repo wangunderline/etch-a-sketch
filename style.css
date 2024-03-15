@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .square {
   border: 1px solid black;
   height: 100%;
@@ -11,14 +5,26 @@
 }
 
 .grid {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
+}
+
+body {
+  background-color: black;
 }
 
 .grid-container {
   display: flex;
   width: 70vw;
-  height: 100vh;
+  height: 120vh;
   margin: 0 auto;
   flex-wrap: wrap;
+  background-color: white;
+  filter: drop-shadow(20px 20px 40px white);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }

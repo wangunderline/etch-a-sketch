@@ -1,6 +1,8 @@
 const container = document.querySelector("#main-container");
 const gridContainer = document.querySelector("#grid-container");
 const button = document.querySelector("button");
+const clearButton = document.querySelector("#clear-button")
+
 
 function hoverOnGrid() {
   let allSquares = document.querySelectorAll(".square");
@@ -43,3 +45,11 @@ button.addEventListener("click", () => {
   const userPrompt = prompt("Grid size");
   createGrid(userPrompt);
 });
+
+clearButton.addEventListener("click", () => {
+  let allSquares = document.querySelectorAll('.square')
+  allSquares.forEach((square) => {
+    square.style.backgroundColor = 'white'
+    square.style.filter = 'brightness(100%)'
+  })
+})
