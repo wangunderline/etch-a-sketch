@@ -14,6 +14,13 @@ function createGrid (gridSize) {
       grid.appendChild(square)
     }
   }
+  let allSquares = document.querySelectorAll('.square')
+  allSquares.forEach((square) => {
+    square.addEventListener('mouseenter', () => {
+      square.style.filter = 'drop-shadow(5px 5px 15px red)'
+      square.style.backgroundColor = 'red'
+    })
+  })
 }
 
 createGrid(16)
@@ -22,6 +29,7 @@ button.addEventListener("click", () => {
   while (gridContainer.hasChildNodes()) {
     gridContainer.removeChild(gridContainer.firstChild);
   }
-  const userPrompt = prompt("The fuck?");
+  const userPrompt = prompt("Grid size");
   createGrid(userPrompt);
 });
+
