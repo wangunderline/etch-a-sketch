@@ -5,12 +5,16 @@ const button = document.querySelector("button");
 function hoverOnGrid() {
   let allSquares = document.querySelectorAll(".square");
   allSquares.forEach((square) => {
+    let rgb1 = Math.floor(Math.random() * 255) + 0;
+    let rgb2 = Math.floor(Math.random() * 255) + 0;
+    let rgb3 = Math.floor(Math.random() * 255) + 0;
+    let brightness = 100
+
     square.addEventListener("mouseenter", () => {
-      let rgb1 = Math.floor(Math.random() * 255) + 0;
-      let rgb2 = Math.floor(Math.random() * 255) + 0;
-      let rgb3 = Math.floor(Math.random() * 255) + 0;
-      let rgbValue = `${rgb1}, ${rgb2}, ${rgb3}`;
-      square.style.backgroundColor = `rgb(${rgbValue})`;
+      brightness -= 10
+      square.style.filter = `brightness(${brightness}%)`
+      square.style.backgroundColor = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
+      console.log(square.style.backgroundColor);
     });
   });
 }
@@ -31,7 +35,6 @@ function createGrid(gridSize) {
 }
 
 createGrid(16);
-
 
 button.addEventListener("click", () => {
   while (gridContainer.hasChildNodes()) {

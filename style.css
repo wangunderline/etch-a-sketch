@@ -8,12 +8,10 @@
   border: 1px solid black;
   height: 100%;
   flex: auto;
-  color: rgb(110, 44, 44);
 }
 
 .grid {
     display: flex;
-    flex-shrink: 1;
     width: 100%;
 }
 
